@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using TexasGuyContractAPI.Interface;
@@ -15,9 +16,15 @@ builder.Logging.SetMinimumLevel(LogLevel.Information); // Ensure all information
 // Configure services
 builder.Services.AddControllers();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
+        b => b.MigrationsAssembly("TexasGuyContractAPI"))); // Ensure the correct migrations assembly
+
+builder.Services.AddDefaultIdentity<IdentityUser>()
+    .AddEntityFrameworkStores<ApplicationDbContext>();
+
 builder.Services.AddScoped<IWaterStationService, WaterStationService>(); // Register IWaterStationService
 builder.Services.AddScoped<IEmailSender, EmailSender>(); // Register EmailSender
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

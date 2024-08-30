@@ -382,3 +382,5 @@ H:\Appky\TexasGuyContractAPI\obj\Debug\net8.0\scopedcss\bundle\TexasGuyContractA
 H:\Appky\TexasGuyContractAPI\obj\Debug\net8.0\TexasGuyContractAPI.csproj.CopyComplete
 H:\Appky\TexasGuyContractAPI\obj\Debug\net8.0\TexasGuyContractAPI.genruntimeconfig.cache
 H:\Appky\TexasGuyContractAPI\obj\Debug\net8.0\ref\TexasGuyContractAPI.dll
+H:\Appky\TexasGuyContractAPI\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
+H:\Appky\TexasGuyContractAPI\bin\Debug\net8.0\System.Text.Json.dll
